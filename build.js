@@ -27,6 +27,16 @@ switch (args.type) {
       filename: 'jspdf.node'
     })
     break;
+    case 'worker':
+    bundle({
+      distFolder: 'dist',
+      config: './build.worker.conf.js',
+      context: 'global',
+      minify: args.minify || true,
+      format: 'cjs',
+      filename: 'jspdf.worker'
+    })
+    break;
   case 'browser':
   default:
     bundle({
